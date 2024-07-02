@@ -46,9 +46,11 @@ class View(ft.UserControl):
         self.txt_name = ft.TextField(
             label="soglia",
             width=200,
-            hint_text="Soglia (s)"
+            hint_text="Soglia (s)",
+            disabled=True,
+            on_change=self._controller.read_soglia
         )
-        self.btn_countedges = ft.ElevatedButton(text="Conta Archi", on_click=self._controller.handle_countedges)
+        self.btn_countedges = ft.ElevatedButton(text="Conta Archi", on_click=self._controller.handle_countedges, disabled=True)
         row2 = ft.Row([self.txt_name, self.btn_countedges],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row2)
